@@ -1,0 +1,87 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+  color: #333;
+  font: 100%/1.5 "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  color: #767676;
+  text-decoration: none;
+  transition: color 300ms;
+}
+
+a:hover {
+  color: #f0c;
+}
+
+header, nav{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+nav > * {
+  padding: 0 3rem;
+}
+
+header h1 {
+  color: #767676;
+  background: #f0c;
+  background: -webkit-linear-gradient(0deg, #339, #f0c);
+  background: -webkit-linear-gradient(bottom, #339, #f0c);
+  background: -o-linear-gradient(bottom, #339, #f0c);
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#339),
+    to(#f0c)
+  );
+  background: linear-gradient(0deg, #339, #f0c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 200;
+  font-size: 5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+main{
+  margin-top: 3rem;
+  width: 100%;
+  flex: 1;
+  display:flex;
+  justify-content: center;
+  background-color: #fff;
+  color: #767677;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  color: #767676;
+}
+
+.meta-data{
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.code-highlight{
+  padding: 4px;
+  color: crimson;
+  background-color: hsla(204, 29%, 97%, 1.00);
+}

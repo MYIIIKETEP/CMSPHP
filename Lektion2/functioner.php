@@ -32,7 +32,8 @@
     }
     // add_numbers(10, 10);
     // echo $sum_all_values; // 10
-
+    
      ?>
+     
 </body>
 </html>
