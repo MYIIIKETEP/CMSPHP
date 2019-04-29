@@ -1,0 +1,44 @@
+Animals
+Skriv SQL som hamtar och visar all data fran tabellen.
+SELECT * FROM animals
+
+Skriv SQL som visar alla farger som forekommer i tabellen. Det ar ok med dubbletter.
+SELECT color from animals
+
+Skriv SQL som visar alla djurnamn och deras fodelsedagar.
+SELECT animal, born FROM animals
+
+Skriv SQL som visar alla djurnamn, sorterade i fallande bokstavsordning. Dvs med O fore A.
+ASC - Ascending
+SELECT animal FROM animals ORDER BY animal ASC
+
+Skriv SQL som visar hela tabellen, sorterat i forsta hand stigande efter farg, i andra hand fallande efter fodelsedatum.
+DESC - Descending
+SELECT * FROM animals ORDER BY color ASC, born DESC
+
+Skriv SQL som visar alla djurnamn, fast andrade sa att det star "Namn: " fore varje djurnamn. Exempel: "Namn: katt", "Namn: undulat" osv.
+CONCAT - satta ihop en strang
+SELECT CONCAT("Name: ", animal) as Name FROM animals
+Skriv SQL som visar en ny kolumn som innehaller bade farg och djur. Exempel: "svart katt". Observera att det ar mellanslag mellan orden! Ge ocksa kolumnen som visas ett namn som du bestammer sjalv genom att anvanda AS
+SELECT CONCAT(color, " ", animal) as Animal FROM animals
+
+
+
+Countries
+SELECT * FROM city WHERE District = "Southern Tagalog";
+-- Kan aven lagga till `LIMIT 1` pa slutet
+SELECT Name, Population FROM city ORDER BY Population ASC;
+SELECT name, population 
+FROM city 
+WHERE Population > 275000 
+ORDER BY Population ASC 
+LIMIT 1;
+SELECT name from city WHERE NAME LIKE 'G%'
+SELECT name from city WHERE NAME = 'Berlin';
+SELECT COUNT(DISTINCT District) FROM city;
+SELECT COUNT(DISTINCT CountryCode) FROM city;
+SELECT * FROM city WHERE id=200; 
+SELECT District FROM city WHERE Name = "Stockholm" OR Name ="Oslo" Or Name = "Reykjavik" OR Name = "Kobenhavn"
+SELECT COUNT(Name) FROM city WHERE (CountryCode = "SWE" OR CountryCode = "NOR" Or CountryCode = "DAN")
+SELECT COUNT(Name) FROM city WHERE (CountryCode = "SWE" OR CountryCode = "NOR"Or CountryCode = "DAN") AND population > 500000;
+SELECT COUNT(Name) FROM city WHERE (CountryCode = "SWE" OR CountryCode = "NOR")AND population > 200000 AND populati
