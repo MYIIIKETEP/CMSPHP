@@ -1,0 +1,171 @@
+Если нужно создать инерт и там есть ID с A_I убираем ID из инсерт команды
+
+Select * FROM Customers WHERE Country="Germany" AND - важно, типо как && в программирование
+
+OR = || 
+
+And NOT - && !=
+
+Like - найти что-то похожее 
+LIKE 'a%' - Найти все строки которые начинаються на а
+'%a' - все которые заканчиваються на а
+'%a%' - все где есть буква А
+'a%o' - начинаеться на А и заканчиваеться на О
+
+SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK');
+
+IN можно использовать вместо повторения OR 
+
+Чтобы ограничить кол-во выписок из ДБ можно поставить LIMIT
+
+Select MIN/MAX(Колонка) можно выбрать максимум или минимум 
+
+Count - посчитать колонки
+
+AVG посчитать среднее число
+
+SUM - посчитать все числа
+
+SELECT CONCAT(Address, " ", PostalCode, " ", City) AS Address
+FROM Customers;
+
+Сделать выписку в одном запросе нескольких колонок
+
+
+2. Где обновлять
+   UPDATE Customers
+   Что обновлять   
+   SET ContactName='Juan'
+   В какой колонке именно обновлять   
+   WHERE Country='Mexico'
+   
+   
+3. Откуда удалять
+   DELETE FROM `customer`
+   Как найти то что удалить  ОБС название колонок без ""
+   WHERE Investments <	 100000
+   
+   
+4.  SELECT * FROM `customer` 
+    Обратить внимание на синтакс WHERE NOT
+    WHERE NOT Country="Mexico"
+   
+5.  SELECT * FROM `customer` 
+    WHERE name LIKE "a%"
+   
+6.SELECT * FROM Customer 
+  после NOT нужно заного вписывать откуда
+  WHERE Country IN ('Germany', 'Sweden' OR 'UK'AND NOT City LIKE "L%")
+  
+7. 2 Варианта
+   SELECT MIN(Investments) FROM customer - сразу выдает только 1 
+   
+   Изза Ордер бай выбирает низшее и лимитируем выписку 1 ответом
+   SELECT * FROM Customer ORDER BY Investments ASC LIMIT 1;
+
+8. SELECT MAX(Investments) AS "LargestInv" FROM customer
+   Если делаем AS то выписывает его динамической колонкой , т.е. не выписывает ВСЮ инфу про
+   внесенную в таблицу, а создает отдельную(динамическую) и показывает только число
+
+
+9. SELECT AVG(Investments)
+   FROM customer
+
+
+10.SELECT SUM(Investments)
+   FROM customer
+
+11.SELECT CONCAT(Name , " " , Adress, " ", PostalCode, " ", City) AS Address FROM Customer
+
+
+
+
+Relations
+Inner JOIN - Полезная хуйня
+выбираем то что нам надо 
+SELECT Books.title, Authors.name AS author, Authors.email
+FROM Books
+JOIN Authors 
+Указываем как прикручивать 1 к другой
+ON Books.author = Authors.id
+
+
+
+
+   Каждыйм AS задаем название для переменной
+   Из PC 
+1. SELECT pc.model AS model, pc.price as Price FROM pc
+   подключаем к ниму базу с продуктами и даем ей название P чтоб не писать
+   INNER JOIN product as p
+   Как идет подключение - нам нужно чтобы модель компа совпала с моделью в продуктах
+   и чтобы создатель сие компа был под маркером А
+   ON pc.model = p.model AND p.maker = "A";
+
+  Без джойна - мы не сможем выписать product.maker 
+2.SELECT laptop.model, laptop.ram, product.maker FROM laptop
+  INNER JOIN product
+  также сравниваем модельки
+  ON laptop.model = product.model;
+  
+3. SELECT printer.type, product.maker FROM printer 
+   INNER JOIN product 
+   ON printer.model = product.model AND printer.type ="laser"
+   
+   
+4.SELECT DISTINCT product.maker FROM product
+JOIN laptop
+Сравниваем модельки ибо модель это праймери ключ
+ON laptop.model = product.model
+Делаем выбор , что именно показать 
+WHERE (laptop.ram = 64 OR laptop.ram = 96) AND product.type = "laptop";
+  
+  
+  
+  
+  
+  
+5.SELECT model, price FROM laptop 
+  Юнион нужен только 1 раз
+  UNION 
+  SELECT model, price FROM pc 
+  SELECT model, price FROM printer  
+  
+  
+  
+  
+  
+6.SELECT * from PC
+  WHERE ram >= 128
+  UNION
+  SELECT * from laptop
+  WHERE ram >= 128
+  ORDER BY price ASC;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+   
+   
+fetch если 1 забираем fetchAll если много ответов
+
+Есть переменные с названиями 
+
+DELETE FROM  users WHERE id= :id
+
+$statement->execute([":id" => переменная не важно откуда взятая]);
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
