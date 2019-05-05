@@ -49,5 +49,6 @@
     ?>
     </tbody>
   </table>
+  <button><a href="addproduct.php">GoTo</button>
 </body>
 </html>
