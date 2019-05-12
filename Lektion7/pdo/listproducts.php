@@ -36,8 +36,7 @@
       foreach ($statement as $row) {
     ?>
       <tr>
-        <td><?= $row['maker'] ?></a></td>
-        <td><?= $row['type'] ?></td>
+        
         <td><?= $row['model'] ?></td>
         <td><?= $row['speed'] ?></td>
         <td><?= $row['ram'] ?></td>
