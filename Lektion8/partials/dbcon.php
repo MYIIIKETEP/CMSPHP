@@ -1,6 +1,6 @@
 <?php
   $host = 'localhost';
-  $db   = 'journal';
+  $db   = 'thestore';
   $user = 'root';
   $pass = '';
   $charset = 'utf8';

@@ -3,5 +3,8 @@
  Description:  TSeven Child
  Template:     twentyseventeen
 */
+/* Вставляем стайлы от мейн темы */
+@import url("../twentyseventeen/style.css");
 
+/* Ниже перебиваем все из мейн темы */
 
