@@ -1,0 +1,15 @@
+/*
+ Theme Name:   Denis Jaksujev Child Theme
+ Description:  ChildTheme
+ Template:     generatepress
+*/
+
+.site-header{
+    background: url(http://2d.by/wallpapers/f/fioletovyy_kosmos_1.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+.main-title a, .main-title a:hover, .main-title a:visited{
+    color:red;
+}

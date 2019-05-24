@@ -1,13 +1,13 @@
 <?php
   // Load everything needed
-  require __DIR__ . '/../vendor/autoload.php';
+  //require __DIR__ . '/../vendor/autoload.php';
   // Start a session here
   session_start();
   // Get settings and instantiate the app
-  $settings = require __DIR__ . '/../src/settings.php';
+  $settings = require __DIR__ . '/src/settings.php';
   $app = new \Slim\App($settings);
   // Register our dependencies through our container
-  $dependencies = require __DIR__ . '/../src/container.php';
+  $dependencies = require __DIR__ . '/src/container.php';
   $dependencies($app);
   // Start adding routes
   $app->get('/user/{id}', function ($request, $response, $args) {

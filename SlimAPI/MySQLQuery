@@ -1,0 +1,54 @@
+Add user
+INSERT INTO `users`(`username`, `password`) VALUES ("admin","test")
+
+Select all users
+SELECT username FROM `users` 
+
+Password chek with PHP
+$statement = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+          $statement->execute([
+              ":username" => $_POST['username']
+          ]);
+          $user = $statement->fetch(PDO::FETCH_ASSOC);
+          if(password_verify($_POST["password"], $user["password"])){
+
+
+
+
+Select top 20 entrys
+SELECT * FROM `entries` LIMIT 20
+
+Select entry by title
+SELECT * FROM `entries` WHERE `title` = "ChangedTitle"
+
+Select entry onclick title
+SELECT * FROM `entries` WHERE `title` = "EntryAdminTest"
+
+Select all entrys that USER created
+SELECT * FROM `entries` WHERE `createdBy`= 1
+
+Add entry
+INSERT INTO `entries`(`title`, `content`, `createdBy`,`createdAt`) 
+VALUES ("EntryAdminTest","EntryContentTest",1,CURRENT_DATE)
+
+UsersEntryUppdate
+UPDATE `entries` SET `title`="ChangedTitle",`content`="ChangedContent" 
+WHERE `entryID` = 1(CurrentEntryID) AND `createdBy`= 1(CurrentUserID)
+
+Delete Entry
+DELETE FROM `entries` WHERE `entryID` = 2(CurrentEntryID) AND `createdBy` = 1(CurrentUserID)
+
+
+
+
+
+
+Add Comment
+INSERT INTO `comments`(`entryID`, `content`, `createdBy`, `createdAt`) VALUES (1,"AdminTestComment",1,CURRENT_DATE)
+
+ChangeComent
+UPDATE `comments` SET `content`="ChangedCommentContent" WHERE `commentID` = 2
+
+Delete Comment
+DELETE FROM `comments` WHERE commentID = 2
+
