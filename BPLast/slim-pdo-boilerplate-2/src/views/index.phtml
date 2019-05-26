@@ -19,21 +19,20 @@
     <template id="loginFormTemplate">
     
       <form action="POST" id="loginForm">
-       <h4>Login</h4>
-       <button id="registerButton">Register</button>
+       <h4>Login to access REDDITv2</h4>
        <p>Login: <input type="text" id="logName" required><p>
        <p>Password: <input type="password" id="logPassword" required></p>
-       <input type="submit" id="login" value="login">
+       <input class="btn-primary" type="submit" id="login" value="Login"><br>
+       <a href="#" id="registerButton">Dont have an account? register</a>
        </form>
        </template>
     <template id="registerTemplate">
        <form action="POST" id="regForm">
-       <h4>Register</h4>
+       <h4>Registrate new account</h4>
        <p id="RegMessage"></p>
-       <button id="loginButton">Login</button>
        <p>Login: <input type="text" id="regName" required><p>
        <p>Password: <input type="password" id="regPassword" required></p>
-       <input type="submit" id="reg" value="register">
+       <input class="btn-primary" type="submit" id="reg" value="Register">
        </form>
      </template>
 
@@ -41,9 +40,9 @@
      <div class="container text-center">
      <nav id=someNav class="navbar navbar-light bg-light">
      
-      <button class="navbar-brand" id="addEntry">AddNewEntry</button>
+      <button class="navbar-brand btn-primary" id="addEntry">AddNewEntry</button>
       <button class="navbar-brand" id="myEntr">ShowMyEntries</button>
-      <button class="navbar-brand" id="LogOut">Logout</button>
+      <button class="navbar-brand " id="LogOut">Logout</button>
      </nav>
      
      <p>Tittle: <input type=text id=uTitle><button id=Search>Search</button></p>
@@ -57,9 +56,9 @@
      </table>
      </template>
     <!-- SingleEntry -->
-   <template id="singleentry">
-   <h1 id=UserName style="visibility:hidden"><?=$_SESSION['UName']?></h1>
-    <button id=homeBTN>home</button>
+    <template id="singleentry">
+     <h1 id=UserName style="visibility:hidden"><?=$_SESSION['UName']?></h1>
+     <button id=homeBTN>home</button>
      <h1 id=seTitle></h1>
      <p style=visibility:hidden id=eID>
      <p id="eECID"></p>
@@ -74,9 +73,9 @@
        
        <p>Comment Text</p> <textarea id=eContent rows="4" cols="30"></textarea><br>
        <input type="submit" id="createComment" value="Add comment">
-    </form>
-    </div>
-    </template>
+     </form>
+     </div>
+     </template>
    <template id=AddEntryTemplate>
     <!-- style="visibility:hidden -->
     <button id=homeBTN>home</button>

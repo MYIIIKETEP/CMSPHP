@@ -130,11 +130,13 @@ $(document).on("click","#reg",(function(event) {
    dataType: 'json',
    data: JSON.stringify(customer),
    success: function() {
-     $("#RegMessage").text("Registered Succesfully")
+     $("#RegMessage").text("Registered Succesfully");
+     $("#reg").remove();
+     $("#regForm").append("<br><input class=btn-primary type=submit id=loginButton value=Login>");
      console.log("RegSucces");
    },
    error: function() {
-     alert("SomethingWentWrong Check")
+     $("#RegMessage").text("Something went wrong, check inputs!").addClass("text-danger");
      console.log("RegisterDidntGO");
     
    }
